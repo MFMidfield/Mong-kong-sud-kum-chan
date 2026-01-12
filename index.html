@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>มงคลสูตรคำฉันท์ - คัมภีร์แห่งมงคลชีวิต</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(to bottom, #f5f1e8, #e8dcc8);
+        }
+        .font-pali {
+            font-family: 'Noto Serif Thai', serif;
+            letter-spacing: 0.02em;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2d2416 0%, #4a3f2e 100%);
+        }
+        .card-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #8b7355, transparent);
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 text-9xl font-pali text-white">๏</div>
+            <div class="absolute bottom-20 right-10 text-9xl font-pali text-white">๏</div>
+        </div>
+        
+        <div class="text-center z-10 px-4" data-aos="fade-up" data-aos-duration="1200">
+            <div class="mb-6 text-amber-200 text-6xl font-pali">๏</div>
+            <h1 class="text-5xl md:text-7xl font-bold text-amber-50 mb-4 font-pali tracking-wide">
+                มงคลสูตรคำฉันท์
+            </h1>
+            <p class="text-xl md:text-2xl text-amber-100 mb-12 font-light">
+                คัมภีร์แห่งมงคลชีวิตจากพระพุทธศาสนา
+            </p>
+            <div class="scroll-indicator cursor-pointer" id="scrollBtn">
+                <svg class="w-8 h-8 mx-auto text-amber-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+                <p class="text-amber-200 text-sm mt-2">เลื่อนลงเพื่ออ่าน</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- คาถาที่ ๔ -->
+    <section class="py-20 px-4" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๔</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- คาถาบาลี -->
+                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
+                    <p class="text-3xl md:text-4xl font-pali text-gray-800 leading-relaxed">
+                        ภควา เอตมตฺถํ อาภาสิ
+                    </p>
+                </div>
+
+                <!-- 1) คำอ่านบาลี -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่านบาลี</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        ภะ–คะ–วา เอ–ตะ–มัด–ถัง อา–ภา–สิ
+                    </p>
+                </div>
+
+                <!-- 2) คำศัพท์ยาก -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์ยาก</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-amber-100">
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">คำ</th>
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">ความหมาย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ภควา</td>
+                                    <td class="border border-amber-200 px-4 py-2">พระผู้มีพระภาคเจ้า</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">เอตํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">นี้</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อตฺถํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">เนื้อความ ความหมาย</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อาภาสิ</td>
+                                    <td class="border border-amber-200 px-4 py-2">ได้ตรัส</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3) ถอดความ -->
+                <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        พระผู้มีพระภาคเจ้า ได้ทรงเปล่งพระวาจาแสดงเนื้อความเรื่องมงคลนี้ คือทรงเริ่มต้นตรัสตอบปัญหาที่ถูกทูลถามเกี่ยวกับมงคลว่า อะไรคือมงคลที่แท้จริงในชีวิต
+                    </p>
+                </div>
+
+                <!-- 4) วิเคราะห์คุณค่า -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-4">๔. วิเคราะห์คุณค่า</h3>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
+                            <p class="text-gray-700">เป็นประโยคสั้น แต่มีพลัง เพราะเป็น "จุดเริ่มต้นคำสอน" ใช้คำ ภควา ซึ่งเป็นคำยกย่องพระพุทธเจ้าสูงสุด</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๒ คุณค่าด้านสังคม</h4>
+                            <p class="text-gray-700">แสดงว่าสังคมให้ความสำคัญกับคำสอนจากผู้รู้สูงสุด เพื่อเป็นแนวทางดำเนินชีวิต</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๓ คุณค่าด้านเนื้อหา</h4>
+                            <p class="text-gray-700">เป็นประโยคเปิดที่ทำให้มงคลสูตรทั้งหมดกลายเป็น พระธรรมเทศนาอย่างเป็นทางการ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5) ข้อคิด -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
+                    <p class="text-gray-800 italic text-lg">
+                        "ความรู้ที่แท้จริงต้องมาจากแหล่งที่เชื่อถือได้ และผ่านการตรึกตรอง"
+                    </p>
+                </div>
+
+                <!-- 6) ความรู้อื่นที่เกี่ยวข้อง -->
+                <div class="p-6 bg-gray-100 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่นที่เกี่ยวข้อง</h3>
+                    <p class="text-gray-700">
+                        คาถานี้ทำหน้าที่เหมือน "หัวเรื่อง" ของพระสูตรในพระไตรปิฎก
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- คาถาที่ ๕ -->
+    <section class="py-20 px-4" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๕</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- คาถาบาลี -->
+                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                        พหู เทวา มนุสฺสา จ<br>
+                        มงฺคลานิ อจินฺตยุํ<br>
+                        อากงฺขมานา โสตฺถานํ<br>
+                        พฺรูหิ มงฺคลมุตฺตมํ
+                    </p>
+                </div>
+
+                <!-- 1) คำอ่านบาลี -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่านบาลี</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        พะ–หู เท–วา มะ–นุด–สา จะ มัง–คะ–ลา–นิ อะ–จิน–ตะ–ยุง อา–กัง–ขะ–มา–นา โสด–ถานัง พรู–หิ มัง–คะ–ละ–มุด–ตะ–มัง
+                    </p>
+                </div>
+
+                <!-- 2) คำศัพท์ยาก -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์ยาก</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-amber-100">
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">คำ</th>
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">ความหมาย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">พหู</td>
+                                    <td class="border border-amber-200 px-4 py-2">เป็นอันมาก</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">เทวา</td>
+                                    <td class="border border-amber-200 px-4 py-2">เทวดา</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">มนุสฺสา</td>
+                                    <td class="border border-amber-200 px-4 py-2">มนุษย์</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">มงฺคลานิ</td>
+                                    <td class="border border-amber-200 px-4 py-2">มงคลทั้งหลาย</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อจินฺตยุํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">คิดใคร่ครวญ</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อากงฺขมานา</td>
+                                    <td class="border border-amber-200 px-4 py-2">ปรารถนา</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">โสตฺถานํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">ความสวัสดี ความปลอดภัย</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">พฺรูหิ</td>
+                                    <td class="border border-amber-200 px-4 py-2">ขอจงตรัส</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">มงฺคลมุตฺตมํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">มงคลสูงสุด</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3) ถอดความ -->
+                <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        เหล่าเทวดาและมนุษย์จำนวนมาก ต่างพากันคิดใคร่ครวญถึงเรื่องมงคล ว่าสิ่งใดกันแน่คือมงคลที่แท้จริง ซึ่งจะนำความปลอดภัย ความเจริญ และความผาสุกมาให้ พวกเขาจึงมีความปรารถนาใคร่รู้ และได้ทูลขอให้พระผู้มีพระภาคเจ้า ทรงแสดงว่าอะไรคือมงคลอันสูงสุด
+                    </p>
+                </div>
+
+                <!-- 4) วิเคราะห์คุณค่า -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-4">๔. วิเคราะห์คุณค่า</h3>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
+                            <p class="text-gray-700">ใช้คำคู่ เทวดา – มนุษย์ เพื่อสื่อว่าคำถามนี้เป็นสากล ครอบคลุมทุกภพภูมิ</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๒ คุณค่าด้านสังคม</h4>
+                            <p class="text-gray-700">สะท้อนว่ามนุษย์ทุกยุคสมัยล้วนแสวงหา "ชีวิตที่ดีและปลอดภัย"</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๓ คุณค่าด้านเนื้อหา</h4>
+                            <p class="text-gray-700">ทำให้มงคลสูตรไม่ใช่แค่คำสอนธรรมดา แต่เป็นคำตอบต่อคำถามของทั้งจักรวาล</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5) ข้อคิด -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
+                    <p class="text-gray-800 italic text-lg">
+                        "แม้ผู้มีอำนาจหรืออยู่สูงอย่างเทวดา ก็ยังต้องแสวงหาความจริง"
+                    </p>
+                </div>
+
+                <!-- 6) ความรู้อื่นที่เกี่ยวข้อง -->
+                <div class="p-6 bg-gray-100 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่นที่เกี่ยวข้อง</h3>
+                    <p class="text-gray-700">
+                        คาถานี้เป็น "คำถามนำ" ของมงคลสูตรทั้งหมด ก่อนเข้าสู่มงคล 38 ประการ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- คาถาที่ ๑ -->
+    <section class="py-20 px-4" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๑</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- คาถาบาลี -->
+                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                        อเสวนา จ พาลานํ<br>
+                        ปณฺฑิตานญฺจ เสวนา<br>
+                        ปูชา จ ปูชนียานํ<br>
+                        เอตมฺมงฺคลมุตฺตมํ
+                    </p>
+                </div>
+
+                <!-- 1) คำอ่าน -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่าน</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        อะ–เส–วะ–นา จะ พา–ลา–นัง ปัน–ฑิ–ตา–นัญ–จะ เส–วะ–นา ปู–ชา จะ ปู–ชะ–นี–ยา–นัง เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                    </p>
+                </div>
+
+                <!-- 2) คำศัพท์ -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-amber-100">
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">คำ</th>
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">ความหมาย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อเสวนา</td>
+                                    <td class="border border-amber-200 px-4 py-2">การไม่คบ</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">พาลานํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">คนพาล</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปณฺฑิตานํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">บัณฑิต ผู้รู้</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">เสวนา</td>
+                                    <td class="border border-amber-200 px-4 py-2">การคบ การเข้าไปหา</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปูชา</td>
+                                    <td class="border border-amber-200 px-4 py-2">การบูชา</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปูชนียานํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">ผู้ควรบูชา</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">เอตํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">นี้</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">มงฺคล</td>
+                                    <td class="border border-amber-200 px-4 py-2">สิริมงคล</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อุตฺตมํ</td>
+                                    <td class="border border-amber-200 px-4 py-2">สูงสุด</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3) ถอดความ -->
+                <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        การไม่คบคนพาล คือไม่เข้าไปข้องเกี่ยว ไม่คลุกคลี ไม่ยอมรับเอาแนวคิดหรือการกระทำของคนที่ประพฤติชั่วเป็นแบบอย่าง การคบบัณฑิต คือการเข้าไปหา คบหาสมาคม เรียนรู้จากผู้มีปัญญา มีความรู้ และมีศีลธรรม และการบูชาผู้ที่ควรบูชา คือการเคารพ ยกย่อง เชิดชู บุคคลที่มีคุณธรรม มีความดีงาม ทั้งสามประการนี้ ชื่อว่าเป็นมงคลอย่างยิ่งสูงสุด
+                    </p>
+                </div>
+
+                <!-- 4) วิเคราะห์คุณค่า -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-4">๔. วิเคราะห์คุณค่า</h3>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">วรรณศิลป์</h4>
+                            <p class="text-gray-700">ใช้โครงสร้างคู่ตรงข้าม พาล ↔ บัณฑิต และการซ้ำคำ เสวนา</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">สังคม</h4>
+                            <p class="text-gray-700">คนเลือกคบใคร = สังคมจะดีหรือเสื่อม</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">เนื้อหา</h4>
+                            <p class="text-gray-700">ชีวิตถูกกำหนดโดยวงสังคม</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5) ข้อคิด -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
+                    <p class="text-gray-800 italic text-lg">
+                        "ไม่เอาคนผิดเป็นเพื่อน และเอาคนดีเป็นแบบอย่าง"
+                    </p>
+                </div>
+
+                <!-- 6) ความรู้เสริม -->
+                <div class="p-6 bg-gray-100 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้เสริม</h3>
+                    <p class="text-gray-700">
+                        <strong>กัลยาณมิตตตา</strong> = การมีเพื่อนดี
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- คาถาที่ ๒ -->
+    <section class="py-20 px-4" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๒</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- คาถาบาลี -->
+                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                        ปฏิรูปเทสวาโส จ<br>
+                        ปุพฺเพ จ กตปุญฺญตา<br>
+                        อตฺตสมฺมาปณิธิ จ<br>
+                        เอตมฺมงฺคลมุตฺตมํ
+                    </p>
+                </div>
+
+                <!-- 1) คำอ่านบาลี -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่านบาลี</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        ปะ–ติ–รูปะ–เท–สะ–วา–โส จะ ปุบ–เพ จะ กะ–ตะ–ปุน–ญะ–ตา อัด–ตะ–สัม–มา–ปะ–นิ–ธิ จะ เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                    </p>
+                </div>
+
+                <!-- 2) คำศัพท์ยาก -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์ยาก</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-amber-100">
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">คำ</th>
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">ความหมาย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปฏิรูป</td>
+                                    <td class="border border-amber-200 px-4 py-2">เหมาะสม</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">เทส</td>
+                                    <td class="border border-amber-200 px-4 py-2">ประเทศ ที่อยู่</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">วาโส</td>
+                                    <td class="border border-amber-200 px-4 py-2">การอยู่อาศัย</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปุพฺเพ</td>
+                                    <td class="border border-amber-200 px-4 py-2">ในกาลก่อน</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">กตปุญฺญตา</td>
+                                    <td class="border border-amber-200 px-4 py-2">การทำบุญไว้แล้ว</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">อตฺต</td>
+                                    <td class="border border-amber-200 px-4 py-2">ตน</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">สมฺมา</td>
+                                    <td class="border border-amber-200 px-4 py-2">ถูกต้อง</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">ปณิธิ</td>
+                                    <td class="border border-amber-200 px-4 py-2">การตั้งใจ</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">มงฺคล</td>
+                                    <td class="border border-amber-200 px-4 py-2">สิริมงคล</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3) ถอดความ -->
+                <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        การอยู่อาศัยในถิ่นที่เหมาะสม คืออยู่ในสภาพแวดล้อมที่เอื้อต่อความดี การที่ตนได้ทำบุญกุศลไว้ในอดีตกาล คือการสั่งสมผลดีมาก่อน และการตั้งตนไว้ในทางที่ถูกต้อง คือการตั้งเป้าหมายชีวิตให้ตรงธรรม ทั้งสามประการนี้ เป็นมงคลอันสูงสุด
+                    </p>
+                </div>
+
+                <!-- 4) คุณค่า -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-4">๔. คุณค่า</h3>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
+                            <p class="text-gray-700">ใช้คำเชิงนามธรรมต่อเนื่อง สถานที่ – อดีต – ตัวตน เป็นลำดับจากภายนอก → ภายใน</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๒ สังคม</h4>
+                            <p class="text-gray-700">บอกว่าสังคมดี + คนดี + อดีตดี = ชีวิตดี สภาพแวดล้อมสำคัญพอ ๆ กับตัวคน</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๓ เนื้อหา</h4>
+                            <p class="text-gray-700">ชี้ว่าความสำเร็จไม่ได้เกิดจากปัจจุบันอย่างเดียว แต่มาจากอดีตและทิศทางชีวิต</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5) ข้อคิด -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
+                    <p class="text-gray-800 italic text-lg">
+                        "อยู่ถูกที่ ทำดีไว้ และตั้งเป้าชีวิตให้ถูก"
+                    </p>
+                </div>
+
+                <!-- 6) ความรู้อื่น -->
+                <div class="p-6 bg-gray-100 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่น</h3>
+                    <p class="text-gray-700">
+                        แนวคิดนี้ตรงกับกฎ <strong>กรรม</strong> อดีต = เหตุ ปัจจุบัน = ผล
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- คาถาที่ ๓ -->
+    <section class="py-20 px-4" data-aos="fade-up">
+        <div class="max-w-4xl mx-auto">
+            <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๓</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- คาถาบาลี -->
+                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                        พาหุสจฺจญฺจ สิปฺปญฺจ<br>
+                        วินโย จ สุสิกฺขิโต<br>
+                        สุภาสิตา จ ยา วาจา<br>
+                        เอตมฺมงฺคลมุตฺตมํ
+                    </p>
+                </div>
+
+                <!-- 1) คำอ่าน -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่าน</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        พา–หุ–สัด–จะญ–จะ สิด–ปัง–จะ วิ–นะ–โย จะ สุ–สิก–ขิ–โต สุ–พา–สิ–ตา จะ ยา วา–จา เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                    </p>
+                </div>
+
+                <!-- 2) คำศัพท์ -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-amber-100">
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">คำ</th>
+                                    <th class="border border-amber-200 px-4 py-3 text-left font-semibold">ความหมาย</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">พาหุสจฺจ</td>
+                                    <td class="border border-amber-200 px-4 py-2">การได้ยินมาก เรียนมาก</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">สิปฺป</td>
+                                    <td class="border border-amber-200 px-4 py-2">ศิลปะ วิชาชีพ</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">วินย</td>
+                                    <td class="border border-amber-200 px-4 py-2">วินัย</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">สุสิกฺขิโต</td>
+                                    <td class="border border-amber-200 px-4 py-2">ฝึกดีแล้ว</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">สุภาสิตา</td>
+                                    <td class="border border-amber-200 px-4 py-2">คำพูดดี</td>
+                                </tr>
+                                <tr class="bg-amber-50">
+                                    <td class="border border-amber-200 px-4 py-2 font-pali">วาจา</td>
+                                    <td class="border border-amber-200 px-4 py-2">คำพูด</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3) ถอดความ -->
+                <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        การเป็นผู้มีความรู้กว้างขวางจากการศึกษาเล่าเรียน การมีศิลปะหรือวิชาชีพที่ใช้ประกอบการงาน การมีวินัยที่ฝึกฝนอย่างดี และการพูดจาที่ไพเราะ ถูกต้อง เหมาะสม ทั้งสี่อย่างนี้ เป็นมงคลอันสูงสุด
+                    </p>
+                </div>
+
+                <!-- 4) คุณค่า -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-4">๔. คุณค่า</h3>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
+                            <p class="text-gray-700">เรียงจาก ความรู้ → ความสามารถ → การควบคุมตน → การสื่อสาร</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๒ สังคม</h4>
+                            <p class="text-gray-700">สังคมต้องการคน เก่ง ทำงานเป็น มีวินัย และพูดดี</p>
+                        </div>
+                        <div class="pl-4 border-l-4 border-amber-400">
+                            <h4 class="font-semibold text-amber-800 mb-2">๔.๓ เนื้อหา</h4>
+                            <p class="text-gray-700">เป็นสูตร "คนคุณภาพ" ในพระพุทธศาสนา</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5) ข้อคิด -->
+                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
+                    <p class="text-gray-800 italic text-lg">
+                        "เก่งอย่างเดียวไม่พอ ต้องมีวินัยและคำพูดดีด้วย"
+                    </p>
+                </div>
+
+                <!-- 6) ความรู้อื่น -->
+                <div class="p-6 bg-gray-100 rounded-xl">
+                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่น</h3>
+                    <p class="text-gray-700">
+                        ตรงกับแนวคิด <strong>IQ + Skill + EQ</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 py-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="mb-6 text-5xl font-pali text-amber-200">๏</div>
+            <p class="text-lg mb-4">มงคลสูตรคำฉันท์</p>
+            <p class="text-sm text-gray-400">คัมภีร์แห่งมงคลชีวิตจากพระพุทธศาสนา</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
