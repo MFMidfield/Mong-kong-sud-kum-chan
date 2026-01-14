@@ -13,6 +13,7 @@
         body {
             font-family: 'Sarabun', sans-serif;
             background: linear-gradient(to bottom, #f5f1e8, #e8dcc8);
+            overflow-x: hidden;
         }
         .font-pali {
             font-family: 'Noto Serif Thai', serif;
@@ -20,10 +21,32 @@
         }
         .hero-gradient {
             background: linear-gradient(135deg, #2d2416 0%, #4a3f2e 100%);
+            position: relative;
         }
         .card-blur {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.85);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-blur:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(139, 115, 85, 0.4);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        .card-blur::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: left 0.8s ease;
+        }
+        .card-blur:hover::before {
+            left: 100%;
         }
         .scroll-indicator {
             animation: bounce 2s infinite;
@@ -37,21 +60,113 @@
             height: 3px;
             background: linear-gradient(to right, transparent, #8b7355, transparent);
             margin: 2rem auto;
+            animation: glow 3s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px rgba(139, 115, 85, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(139, 115, 85, 0.8), 0 0 30px rgba(255, 215, 0, 0.4); }
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translate(100px, -1000px) rotate(360deg); opacity: 0; }
+        }
+        .glow-text {
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); }
+        }
+        .emoji-float {
+            display: inline-block;
+            animation: emojiFloat 3s ease-in-out infinite;
+        }
+        @keyframes emojiFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+        .pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .gradient-animate {
+            background: linear-gradient(270deg, #fef3c7, #fde68a, #fcd34d);
+            background-size: 600% 600%;
+            animation: gradientShift 8s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .bg-quote {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border-left: 4px solid #d97706;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(217, 119, 6, 0.1);
+            font-family: Georgia, serif;
+        }
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
     </style>
 </head>
 <body class="text-gray-800">
 
     <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 left-10 text-9xl font-pali text-white">๏</div>
-            <div class="absolute bottom-20 right-10 text-9xl font-pali text-white">๏</div>
+            <div class="absolute top-20 left-10 text-9xl font-pali text-white pulse-slow">๏</div>
+            <div class="absolute bottom-20 right-10 text-9xl font-pali text-white pulse-slow" style="animation-delay: 2s;">๏</div>
         </div>
         
+        <!-- Particle Container -->
+        <div id="particles" class="absolute inset-0 pointer-events-none"></div>
+        
         <div class="text-center z-10 px-4" data-aos="fade-up" data-aos-duration="1200">
-            <div class="mb-6 text-amber-200 text-6xl font-pali">๏</div>
-            <h1 class="text-5xl md:text-7xl font-bold text-amber-50 mb-4 font-pali tracking-wide">
+            <div class="mb-6 text-amber-200 text-6xl font-pali glow-text">๏</div>
+            <h1 class="text-5xl md:text-7xl font-bold text-amber-50 mb-4 font-pali tracking-wide glow-text">
                 มงคลสูตรคำฉันท์
             </h1>
             <p class="text-xl md:text-2xl text-amber-100 mb-12 font-light">
@@ -66,18 +181,18 @@
         </div>
     </section>
 
-    <!-- คาถาที่ ๔ -->
+    <!-- คาถาที่ ๑๑ -->
     <section class="py-20 px-4" data-aos="fade-up">
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๔</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๑๑</h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
-                    <p class="text-3xl md:text-4xl font-pali text-gray-800 leading-relaxed">
+                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                    <p class="text-3xl md:text-4xl font-pali text-gray-800 leading-relaxed glow-text">
                         ภควา เอตมตฺถํ อาภาสิ
                     </p>
                 </div>
@@ -151,9 +266,9 @@
                 </div>
 
                 <!-- 5) ข้อคิด -->
-                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                <div class="mb-8 p-6 bg-quote rounded-xl shine">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
-                    <p class="text-gray-800 italic text-lg">
+                    <p class="text-gray-800 italic text-lg font-medium">
                         "ความรู้ที่แท้จริงต้องมาจากแหล่งที่เชื่อถือได้ และผ่านการตรึกตรอง"
                     </p>
                 </div>
@@ -174,13 +289,13 @@
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๕</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span></h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
                         พหู เทวา มนุสฺสา จ<br>
                         มงฺคลานิ อจินฺตยุํ<br>
                         อากงฺขมานา โสตฺถานํ<br>
@@ -192,7 +307,11 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่านบาลี</h3>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        พะ–หู เท–วา มะ–นุด–สา จะ มัง–คะ–ลา–นิ อะ–จิน–ตะ–ยุง อา–กัง–ขะ–มา–นา โสด–ถานัง พรู–หิ มัง–คะ–ละ–มุด–ตะ–มัง
+                        พะ–หู เท–วา มะ–นุด–สา จะ<br>
+                        มัง–คะ–ลา–นิ อะ–จิน–ตะ–ยุง<br>
+                        อา–กัง–ขะ–มา–นา<br>
+                        โสด–ถานัง พรู–หิ<br>
+                        มัง–คะ–ละ–มุด–ตะ–มัง
                     </p>
                 </div>
 
@@ -277,9 +396,9 @@
                 </div>
 
                 <!-- 5) ข้อคิด -->
-                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                <div class="mb-8 p-6 bg-quote rounded-xl shine">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
-                    <p class="text-gray-800 italic text-lg">
+                    <p class="text-gray-800 italic text-lg font-medium">
                         "แม้ผู้มีอำนาจหรืออยู่สูงอย่างเทวดา ก็ยังต้องแสวงหาความจริง"
                     </p>
                 </div>
@@ -300,13 +419,13 @@
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๑</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๑</h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
                         อเสวนา จ พาลานํ<br>
                         ปณฺฑิตานญฺจ เสวนา<br>
                         ปูชา จ ปูชนียานํ<br>
@@ -318,11 +437,14 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่าน</h3>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        อะ–เส–วะ–นา จะ พา–ลา–นัง ปัน–ฑิ–ตา–นัญ–จะ เส–วะ–นา ปู–ชา จะ ปู–ชะ–นี–ยา–นัง เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                        อะ–เส–วะ–นา จะ พา–ลา–นัง <br>
+                        ปัน–ฑิ–ตา–นัญ–จะ เส–วะ–นา <br>
+                        ปู–ชา จะ ปู–ชะ–นี–ยา–นัง <br>
+                        เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
                     </p>
                 </div>
 
-                <!-- 2) คำศัพท์ -->
+                <!-- 2) คำศัพท์ --> 
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์</h3>
                     <div class="overflow-x-auto">
@@ -403,9 +525,9 @@
                 </div>
 
                 <!-- 5) ข้อคิด -->
-                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                <div class="mb-8 p-6 bg-quote rounded-xl shine">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
-                    <p class="text-gray-800 italic text-lg">
+                    <p class="text-gray-800 italic text-lg font-medium">
                         "ไม่เอาคนผิดเป็นเพื่อน และเอาคนดีเป็นแบบอย่าง"
                     </p>
                 </div>
@@ -426,13 +548,13 @@
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๒</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๒</h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
                         ปฏิรูปเทสวาโส จ<br>
                         ปุพฺเพ จ กตปุญฺญตา<br>
                         อตฺตสมฺมาปณิธิ จ<br>
@@ -444,7 +566,10 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่านบาลี</h3>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        ปะ–ติ–รูปะ–เท–สะ–วา–โส จะ ปุบ–เพ จะ กะ–ตะ–ปุน–ญะ–ตา อัด–ตะ–สัม–มา–ปะ–นิ–ธิ จะ เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                        ปะ–ติ–รูปะ–เท–สะ–วา–โส จะ <br>
+                        ปุบ–เพ จะ กะ–ตะ–ปุน–ญะ–ตา <br>
+                        อัด–ตะ–สัม–มา–ปะ–นิ–ธิ จะ <br>
+                        เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
                     </p>
                 </div>
 
@@ -529,9 +654,9 @@
                 </div>
 
                 <!-- 5) ข้อคิด -->
-                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                <div class="mb-8 p-6 bg-quote rounded-xl shine">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
-                    <p class="text-gray-800 italic text-lg">
+                    <p class="text-gray-800 italic text-lg font-medium">
                         "อยู่ถูกที่ ทำดีไว้ และตั้งเป้าชีวิตให้ถูก"
                     </p>
                 </div>
@@ -552,13 +677,13 @@
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">🌟 คาถาที่ ๓</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๓</h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 bg-amber-50 rounded-xl">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed">
+                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
                         พาหุสจฺจญฺจ สิปฺปญฺจ<br>
                         วินโย จ สุสิกฺขิโต<br>
                         สุภาสิตา จ ยา วาจา<br>
@@ -570,7 +695,10 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๑. คำอ่าน</h3>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        พา–หุ–สัด–จะญ–จะ สิด–ปัง–จะ วิ–นะ–โย จะ สุ–สิก–ขิ–โต สุ–พา–สิ–ตา จะ ยา วา–จา เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
+                        พา–หุ–สัด–จะญ–จะ สิด–ปัง–จะ <br>
+                        วิ–นะ–โย จะ สุ–สิก–ขิ–โต <br>
+                        สุ–พา–สิ–ตา จะ ยา วา–จา <br>
+                        เอ–ตัม มัง–คะ–ละ–มุด–ตะ–มัง
                     </p>
                 </div>
 
@@ -643,9 +771,9 @@
                 </div>
 
                 <!-- 5) ข้อคิด -->
-                <div class="mb-8 p-6 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl border-l-4 border-amber-600">
+                <div class="mb-8 p-6 bg-quote rounded-xl shine">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๕. ข้อคิด</h3>
-                    <p class="text-gray-800 italic text-lg">
+                    <p class="text-gray-800 italic text-lg font-medium">
                         "เก่งอย่างเดียวไม่พอ ต้องมีวินัยและคำพูดดีด้วย"
                     </p>
                 </div>
@@ -664,9 +792,12 @@
     <!-- Footer -->
     <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 py-12">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="mb-6 text-5xl font-pali text-amber-200">๏</div>
-            <p class="text-lg mb-4">มงคลสูตรคำฉันท์</p>
+            <div class="mb-6 text-5xl font-pali text-amber-200 glow-text pulse-slow">๏</div>
+            <p class="text-lg mb-4 font-pali">มงคลสูตรคำฉันท์</p>
             <p class="text-sm text-gray-400">คัมภีร์แห่งมงคลชีวิตจากพระพุทธศาสนา</p>
+            <div class="mt-8 text-xs text-gray-500">
+                <p>สร้างสรรค์ด้วยศรัทธาและความเคารพต่อพระพุทธศาสนา</p>
+            </div>
         </div>
     </footer>
 
