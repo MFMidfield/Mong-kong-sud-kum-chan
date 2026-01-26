@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;600;700&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;600;700&family=Sarabun:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
@@ -15,14 +18,17 @@
             background: linear-gradient(to bottom, #f5f1e8, #e8dcc8);
             overflow-x: hidden;
         }
+
         .font-pali {
             font-family: 'Noto Serif Thai', serif;
             letter-spacing: 0.02em;
         }
+
         .hero-gradient {
             background: linear-gradient(135deg, #2d2416 0%, #4a3f2e 100%);
             position: relative;
         }
+
         .card-blur {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.85);
@@ -30,11 +36,13 @@
             position: relative;
             overflow: hidden;
         }
+
         .card-blur:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px -12px rgba(139, 115, 85, 0.4);
             background: rgba(255, 255, 255, 0.95);
         }
+
         .card-blur::before {
             content: '';
             position: absolute;
@@ -45,16 +53,27 @@
             background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
             transition: left 0.8s ease;
         }
+
         .card-blur:hover::before {
             left: 100%;
         }
+
         .scroll-indicator {
             animation: bounce 2s infinite;
         }
+
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
         }
+
         .divider {
             width: 60px;
             height: 3px;
@@ -62,10 +81,19 @@
             margin: 2rem auto;
             animation: glow 3s ease-in-out infinite;
         }
+
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 5px rgba(139, 115, 85, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(139, 115, 85, 0.8), 0 0 30px rgba(255, 215, 0, 0.4); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 5px rgba(139, 115, 85, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(139, 115, 85, 0.8), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
         }
+
         .particle {
             position: absolute;
             background: rgba(255, 215, 0, 0.3);
@@ -73,50 +101,105 @@
             pointer-events: none;
             animation: float 15s infinite ease-in-out;
         }
+
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translate(100px, -1000px) rotate(360deg); opacity: 0; }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(100px, -1000px) rotate(360deg);
+                opacity: 0;
+            }
         }
+
         .glow-text {
             animation: textGlow 3s ease-in-out infinite;
         }
+
         @keyframes textGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-            50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4); }
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+
+            50% {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
         }
+
         .emoji-float {
             display: inline-block;
             animation: emojiFloat 3s ease-in-out infinite;
         }
+
         @keyframes emojiFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.1); }
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-10px) scale(1.1);
+            }
         }
+
         .pulse-slow {
             animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
         }
+
         .gradient-animate {
             background: linear-gradient(270deg, #fef3c7, #fde68a, #fcd34d);
             background-size: 600% 600%;
             animation: gradientShift 8s ease infinite;
         }
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         .bg-quote {
             background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
             border-left: 4px solid #d97706;
             position: relative;
             overflow: hidden;
         }
+
         .bg-quote::before {
             content: '"';
             position: absolute;
@@ -126,10 +209,12 @@
             color: rgba(217, 119, 6, 0.1);
             font-family: Georgia, serif;
         }
+
         .shine {
             position: relative;
             overflow: hidden;
         }
+
         .shine::after {
             content: '';
             position: absolute;
@@ -137,33 +222,39 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
+            background: linear-gradient(45deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
             transform: rotate(45deg);
             animation: shine 3s infinite;
         }
+
         @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
     </style>
 </head>
+
 <body class="text-gray-800">
 
     <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden" id="hero">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute top-20 left-10 text-9xl font-pali text-white pulse-slow">๏</div>
-            <div class="absolute bottom-20 right-10 text-9xl font-pali text-white pulse-slow" style="animation-delay: 2s;">๏</div>
+            <div class="absolute bottom-20 right-10 text-9xl font-pali text-white pulse-slow"
+                style="animation-delay: 2s;">๏</div>
         </div>
-        
+
         <!-- Particle Container -->
         <div id="particles" class="absolute inset-0 pointer-events-none"></div>
-        
+
         <div class="text-center z-10 px-4" data-aos="fade-up" data-aos-duration="1200">
             <div class="mb-6 text-amber-200 text-6xl font-pali glow-text">๏</div>
             <h1 class="text-5xl md:text-7xl font-bold text-amber-50 mb-4 font-pali tracking-wide glow-text">
@@ -174,7 +265,8 @@
             </p>
             <div class="scroll-indicator cursor-pointer" id="scrollBtn">
                 <svg class="w-8 h-8 mx-auto text-amber-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
                 <p class="text-amber-200 text-sm mt-2">เลื่อนลงเพื่ออ่าน</p>
             </div>
@@ -186,15 +278,35 @@
         <div class="max-w-4xl mx-auto">
             <div class="card-blur rounded-2xl shadow-2xl p-8 md:p-12">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๑๑</h2>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2"><span class="emoji-float">🌟</span> คาถาที่ ๑๑
+                    </h2>
                     <div class="divider"></div>
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
-                    <p class="text-3xl md:text-4xl font-pali text-gray-800 leading-relaxed glow-text">
-                        ภควา เอตมตฺถํ อาภาสิ
-                    </p>
+                <div class="flex flex-col">
+                    <div class="flex gap-4 justify-start">
+                        <div class="text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                                ภควา เอตมตฺถํ อาภาสิ
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-row gap-4 px-10 text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    จึ่งได้ทูลถามภควันต์<br>
+                                    เป็นพระคาถาบรรจงฯ
+                                </p>
+                            </div>
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    ด้วยถ้อยประพันธ์
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 1) คำอ่านบาลี -->
@@ -242,7 +354,8 @@
                 <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        พระผู้มีพระภาคเจ้า ได้ทรงเปล่งพระวาจาแสดงเนื้อความเรื่องมงคลนี้ คือทรงเริ่มต้นตรัสตอบปัญหาที่ถูกทูลถามเกี่ยวกับมงคลว่า อะไรคือมงคลที่แท้จริงในชีวิต
+                        พระผู้มีพระภาคเจ้า ได้ทรงเปล่งพระวาจาแสดงเนื้อความเรื่องมงคลนี้
+                        คือทรงเริ่มต้นตรัสตอบปัญหาที่ถูกทูลถามเกี่ยวกับมงคลว่า อะไรคือมงคลที่แท้จริงในชีวิต
                     </p>
                 </div>
 
@@ -252,15 +365,18 @@
                     <div class="space-y-4">
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
-                            <p class="text-gray-700">เป็นประโยคสั้น แต่มีพลัง เพราะเป็น "จุดเริ่มต้นคำสอน" ใช้คำ ภควา ซึ่งเป็นคำยกย่องพระพุทธเจ้าสูงสุด</p>
+                            <p class="text-gray-700">เป็นประโยคสั้น แต่มีพลัง เพราะเป็น "จุดเริ่มต้นคำสอน" ใช้คำ ภควา
+                                ซึ่งเป็นคำยกย่องพระพุทธเจ้าสูงสุด</p>
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๒ คุณค่าด้านสังคม</h4>
-                            <p class="text-gray-700">แสดงว่าสังคมให้ความสำคัญกับคำสอนจากผู้รู้สูงสุด เพื่อเป็นแนวทางดำเนินชีวิต</p>
+                            <p class="text-gray-700">แสดงว่าสังคมให้ความสำคัญกับคำสอนจากผู้รู้สูงสุด
+                                เพื่อเป็นแนวทางดำเนินชีวิต</p>
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๓ คุณค่าด้านเนื้อหา</h4>
-                            <p class="text-gray-700">เป็นประโยคเปิดที่ทำให้มงคลสูตรทั้งหมดกลายเป็น พระธรรมเทศนาอย่างเป็นทางการ</p>
+                            <p class="text-gray-700">เป็นประโยคเปิดที่ทำให้มงคลสูตรทั้งหมดกลายเป็น
+                                พระธรรมเทศนาอย่างเป็นทางการ</p>
                         </div>
                     </div>
                 </div>
@@ -294,13 +410,36 @@
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
-                        พหู เทวา มนุสฺสา จ<br>
-                        มงฺคลานิ อจินฺตยุํ<br>
-                        อากงฺขมานา โสตฺถานํ<br>
-                        พฺรูหิ มงฺคลมุตฺตมํ
-                    </p>
+                <div class="flex flex-col">
+                    <div class="flex gap-4 justify-start">
+                        <div class="text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                                พหู เทวา มนุสฺสา จ<br>
+                                มงฺคลานิ อจินฺตยุํ<br>
+                                อากงฺขมานา โสตฺถานํ<br>
+                                พฺรูหิ มงฺคลมุตฺตมํ
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-row gap-4 px-10 text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    เทพอีกมนุษย์หวัง<br>
+                                    โปรดเทศนามง- <br>
+                                    (ฝ่ายองค์สมเด็จชินสีห์ <br>
+                                    ด้วยพระคาถาไพจิตร) <br>
+                                </p>
+                            </div>
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    คติโสตถิจำนง<br>
+                                    คละเอกอุดมดีๆ<br>
+                                    ตรัสตอบวาที่<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 1) คำอ่านบาลี -->
@@ -372,7 +511,9 @@
                 <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        เหล่าเทวดาและมนุษย์จำนวนมาก ต่างพากันคิดใคร่ครวญถึงเรื่องมงคล ว่าสิ่งใดกันแน่คือมงคลที่แท้จริง ซึ่งจะนำความปลอดภัย ความเจริญ และความผาสุกมาให้ พวกเขาจึงมีความปรารถนาใคร่รู้ และได้ทูลขอให้พระผู้มีพระภาคเจ้า ทรงแสดงว่าอะไรคือมงคลอันสูงสุด
+                        เหล่าเทวดาและมนุษย์จำนวนมาก ต่างพากันคิดใคร่ครวญถึงเรื่องมงคล ว่าสิ่งใดกันแน่คือมงคลที่แท้จริง
+                        ซึ่งจะนำความปลอดภัย ความเจริญ และความผาสุกมาให้ พวกเขาจึงมีความปรารถนาใคร่รู้
+                        และได้ทูลขอให้พระผู้มีพระภาคเจ้า ทรงแสดงว่าอะไรคือมงคลอันสูงสุด
                     </p>
                 </div>
 
@@ -382,7 +523,8 @@
                     <div class="space-y-4">
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
-                            <p class="text-gray-700">ใช้คำคู่ เทวดา – มนุษย์ เพื่อสื่อว่าคำถามนี้เป็นสากล ครอบคลุมทุกภพภูมิ</p>
+                            <p class="text-gray-700">ใช้คำคู่ เทวดา – มนุษย์ เพื่อสื่อว่าคำถามนี้เป็นสากล
+                                ครอบคลุมทุกภพภูมิ</p>
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๒ คุณค่าด้านสังคม</h4>
@@ -390,7 +532,8 @@
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๓ คุณค่าด้านเนื้อหา</h4>
-                            <p class="text-gray-700">ทำให้มงคลสูตรไม่ใช่แค่คำสอนธรรมดา แต่เป็นคำตอบต่อคำถามของทั้งจักรวาล</p>
+                            <p class="text-gray-700">ทำให้มงคลสูตรไม่ใช่แค่คำสอนธรรมดา
+                                แต่เป็นคำตอบต่อคำถามของทั้งจักรวาล</p>
                         </div>
                     </div>
                 </div>
@@ -424,14 +567,48 @@
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
-                        อเสวนา จ พาลานํ<br>
-                        ปณฺฑิตานญฺจ เสวนา<br>
-                        ปูชา จ ปูชนียานํ<br>
-                        เอตมฺมงฺคลมุตฺตมํ
-                    </p>
+                <div class="flex flex-col">
+                    <div class="flex gap-4 justify-start">
+                        <div class="text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                                อเสวนา จ พาลานํ<br>
+                                ปณฺฑิตานญฺจ เสวนา<br>
+                                ปูชา จ ปูชนียานํ<br>
+                                เอตมฺมงฺคลมุตฺตมํ
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-row gap-4 px-10 text-center mb-4 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    หนึ่งคือบ่คบพาล<br>
+                                    หนึ่งคบกะบัณฑิต<br>
+                                    หนึ่งกราบและบูชา<br>
+                                    ข้อนี้แหละมงคล<br>
+                                </p>
+                            </div>
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    เพราะจะพาประพฤติผิด<br>
+                                    เพราะจะพาประสบผล<br>
+                                    อภิบูชนีย์ชน<br>
+                                    อดิเรกอุดมดี<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                        <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                            ตรงกับมงคลข้อที่: <br>
+                            ข้อ 1 อเสวนา จ พาลานํ = ไม่คบคนพาล <br>
+                            ข้อ 2 ปณฺฑิตานญฺจ เสวนา = คบบัณฑิต <br>
+                            ข้อ 3 ปูชา จ ปูชนียานํ = บูชาผู้ควรบูชา <br>
+                        </p>
+                    </div>
                 </div>
+
 
                 <!-- 1) คำอ่าน -->
                 <div class="mb-8">
@@ -444,7 +621,7 @@
                     </p>
                 </div>
 
-                <!-- 2) คำศัพท์ --> 
+                <!-- 2) คำศัพท์ -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๒. คำศัพท์</h3>
                     <div class="overflow-x-auto">
@@ -501,7 +678,10 @@
                 <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        การไม่คบคนพาล คือไม่เข้าไปข้องเกี่ยว ไม่คลุกคลี ไม่ยอมรับเอาแนวคิดหรือการกระทำของคนที่ประพฤติชั่วเป็นแบบอย่าง การคบบัณฑิต คือการเข้าไปหา คบหาสมาคม เรียนรู้จากผู้มีปัญญา มีความรู้ และมีศีลธรรม และการบูชาผู้ที่ควรบูชา คือการเคารพ ยกย่อง เชิดชู บุคคลที่มีคุณธรรม มีความดีงาม ทั้งสามประการนี้ ชื่อว่าเป็นมงคลอย่างยิ่งสูงสุด
+                        การไม่คบคนพาล คือไม่เข้าไปข้องเกี่ยว ไม่คลุกคลี
+                        ไม่ยอมรับเอาแนวคิดหรือการกระทำของคนที่ประพฤติชั่วเป็นแบบอย่าง การคบบัณฑิต คือการเข้าไปหา
+                        คบหาสมาคม เรียนรู้จากผู้มีปัญญา มีความรู้ และมีศีลธรรม และการบูชาผู้ที่ควรบูชา คือการเคารพ
+                        ยกย่อง เชิดชู บุคคลที่มีคุณธรรม มีความดีงาม ทั้งสามประการนี้ ชื่อว่าเป็นมงคลอย่างยิ่งสูงสุด
                     </p>
                 </div>
 
@@ -536,7 +716,7 @@
                 <div class="p-6 bg-gray-100 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้เสริม</h3>
                     <p class="text-gray-700">
-                        <strong>กัลยาณมิตตตา</strong> = การมีเพื่อนดี
+                        <strong>กัลยาณมิตตตา</strong> คือ การมีเพื่อนที่ดี
                     </p>
                 </div>
             </div>
@@ -553,13 +733,47 @@
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
-                        ปฏิรูปเทสวาโส จ<br>
-                        ปุพฺเพ จ กตปุญฺญตา<br>
-                        อตฺตสมฺมาปณิธิ จ<br>
-                        เอตมฺมงฺคลมุตฺตมํ
-                    </p>
+                <div class="flex flex-col">
+                    <div class="flex gap-4 justify-between">
+                        <div class="text-center mb-7 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                                ปฏิรูปเทสวาโส จ<br>
+                                ปุพฺเพ จ กตปุญฺญตา<br>
+                                อตฺตสมฺมาปณิธิ จ<br>
+                                เอตมฺมงฺคลมุตฺตมํ
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-row gap-4 px-10 text-center mb-7 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    ความอยู่ประเทศซึ่ง <br>
+                                    อีกบุญญะการที่ <br>
+                                    อีกหมั่นประพฤติควร <br>
+                                    ข้อนี้แหละมงคล <br>
+                                </p>
+                            </div>
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    เหมาะและควรจะสุขี<br>
+                                    ณ อดีตะมาดล<br>
+                                    ณ สภาวะแห่งตน<br>
+                                    อดิเรกอุดมดี<br>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                        <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                            ตรงกับมงคลข้อที่: <br>
+                            ข้อ 4 ปฏิรูปเทสวาโส = อยู่ในถิ่นที่เหมาะสม <br>
+                            ข้อ 5 ปุพฺเพ จ กตปุญฺญตา = เคยทำบุญไว้ก่อน <br>
+                            ข้อ 6 อตฺตสมฺมาปณิธิ = ตั้งตนไว้ชอบ <br>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- 1) คำอ่านบาลี -->
@@ -630,7 +844,9 @@
                 <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        การอยู่อาศัยในถิ่นที่เหมาะสม คืออยู่ในสภาพแวดล้อมที่เอื้อต่อความดี การที่ตนได้ทำบุญกุศลไว้ในอดีตกาล คือการสั่งสมผลดีมาก่อน และการตั้งตนไว้ในทางที่ถูกต้อง คือการตั้งเป้าหมายชีวิตให้ตรงธรรม ทั้งสามประการนี้ เป็นมงคลอันสูงสุด
+                        การอยู่อาศัยในถิ่นที่เหมาะสม คืออยู่ในสภาพแวดล้อมที่เอื้อต่อความดี
+                        การที่ตนได้ทำบุญกุศลไว้ในอดีตกาล คือการสั่งสมผลดีมาก่อน และการตั้งตนไว้ในทางที่ถูกต้อง
+                        คือการตั้งเป้าหมายชีวิตให้ตรงธรรม ทั้งสามประการนี้ เป็นมงคลอันสูงสุด
                     </p>
                 </div>
 
@@ -640,15 +856,18 @@
                     <div class="space-y-4">
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๑ วรรณศิลป์</h4>
-                            <p class="text-gray-700">ใช้คำเชิงนามธรรมต่อเนื่อง สถานที่ – อดีต – ตัวตน เป็นลำดับจากภายนอก → ภายใน</p>
+                            <p class="text-gray-700">ใช้คำเชิงนามธรรมต่อเนื่อง สถานที่ – อดีต – ตัวตน เป็นลำดับจากภายนอก
+                                → ภายใน</p>
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๒ สังคม</h4>
-                            <p class="text-gray-700">บอกว่าสังคมดี + คนดี + อดีตดี = ชีวิตดี สภาพแวดล้อมสำคัญพอ ๆ กับตัวคน</p>
+                            <p class="text-gray-700">บอกว่าสังคมดี + คนดี + อดีตดี = ชีวิตดี สภาพแวดล้อมสำคัญพอ ๆ
+                                กับตัวคน</p>
                         </div>
                         <div class="pl-4 border-l-4 border-amber-400">
                             <h4 class="font-semibold text-amber-800 mb-2">๔.๓ เนื้อหา</h4>
-                            <p class="text-gray-700">ชี้ว่าความสำเร็จไม่ได้เกิดจากปัจจุบันอย่างเดียว แต่มาจากอดีตและทิศทางชีวิต</p>
+                            <p class="text-gray-700">ชี้ว่าความสำเร็จไม่ได้เกิดจากปัจจุบันอย่างเดียว
+                                แต่มาจากอดีตและทิศทางชีวิต</p>
                         </div>
                     </div>
                 </div>
@@ -665,7 +884,7 @@
                 <div class="p-6 bg-gray-100 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่น</h3>
                     <p class="text-gray-700">
-                        แนวคิดนี้ตรงกับกฎ <strong>กรรม</strong> อดีต = เหตุ ปัจจุบัน = ผล
+                        กฎแห่ง<strong>กรรม</strong>โดยมีอดีตเป็นเหตุ ปัจจุบันเป็นผล
                     </p>
                 </div>
             </div>
@@ -682,13 +901,52 @@
                 </div>
 
                 <!-- คาถาบาลี -->
-                <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
-                    <p class="text-2xl md:text-3xl font-pali text-gray-800 leading-relaxed glow-text">
-                        พาหุสจฺจญฺจ สิปฺปญฺจ<br>
-                        วินโย จ สุสิกฺขิโต<br>
-                        สุภาสิตา จ ยา วาจา<br>
-                        เอตมฺมงฺคลมุตฺตมํ
-                    </p>
+                <div class="flex flex-col">
+                    <div class="flex gap-4 justify-between">
+                        <div class="text-center mb-6 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                                พาหุสจฺจญฺจ สิปฺปญฺจ<br>
+                                วินโย จ สุสิกฺขิโต<br>
+                                สุภาสิตา จ ยา วาจา<br>
+                                เอตมฺมงฺคลมุตฺตมํ
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex flex-row gap-4 px-8 text-center mb-6 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    ความได้สดับมาก <br>
+                                    อีกศิลปศาสตร์มี <br>
+                                    อีกหนึ่งวินัยอัน <br>
+                                    อีกคำเพราะบรรสาน <br>
+                                    ทั้งสี่ประการล้วน <br>
+                                    ข้อนี้แหละมงคล <br>
+                                </p>
+                            </div>
+                            <div class="text-center w-fit ">
+                                <p class="text-2xl font-pali text-gray-800 leading-relaxed glow-text text-left">
+                                    และกำหนดสุวาที<br>
+                                    จะประกอบมนุญการ<br>
+                                    นรเรียนและเชี่ยวชาญ<br>
+                                    ฤดิแห่งประชาชน<br>
+                                    จะประสิทธิ์มนุญผล<br>
+                                    อดิเรกอุดมดี<br>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mb-8 p-6 gradient-animate rounded-xl border-2 border-amber-200">
+                        <p class="text-2xl text-left font-pali text-gray-800 leading-relaxed glow-text">
+                            ตรงกับมงคลข้อที่: <br>
+                            ข้อ 7 พาหุสจฺจ = เป็นพหูสูต (เรียนรู้มาก) <br>
+                            ข้อ 8 สิปฺป = มีศิลปะ/วิชาชีพ <br>
+                            ข้อ 9 วินโย จ สุสิกฺขิโต = มีวินัยดี <br>
+                            ข้อ 10 สุภาสิตา จ ยา วาจา = พูดดี <br>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- 1) คำอ่าน -->
@@ -747,7 +1005,8 @@
                 <div class="mb-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl">
                     <h3 class="text-xl font-semibold text-amber-900 mb-3">๓. ถอดความ</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        การเป็นผู้มีความรู้กว้างขวางจากการศึกษาเล่าเรียน การมีศิลปะหรือวิชาชีพที่ใช้ประกอบการงาน การมีวินัยที่ฝึกฝนอย่างดี และการพูดจาที่ไพเราะ ถูกต้อง เหมาะสม ทั้งสี่อย่างนี้ เป็นมงคลอันสูงสุด
+                        การเป็นผู้มีความรู้กว้างขวางจากการศึกษาเล่าเรียน การมีศิลปะหรือวิชาชีพที่ใช้ประกอบการงาน
+                        การมีวินัยที่ฝึกฝนอย่างดี และการพูดจาที่ไพเราะ ถูกต้อง เหมาะสม ทั้งสี่อย่างนี้ เป็นมงคลอันสูงสุด
                     </p>
                 </div>
 
@@ -777,14 +1036,6 @@
                         "เก่งอย่างเดียวไม่พอ ต้องมีวินัยและคำพูดดีด้วย"
                     </p>
                 </div>
-
-                <!-- 6) ความรู้อื่น -->
-                <div class="p-6 bg-gray-100 rounded-xl">
-                    <h3 class="text-xl font-semibold text-amber-900 mb-3">๖. ความรู้อื่น</h3>
-                    <p class="text-gray-700">
-                        ตรงกับแนวคิด <strong>IQ + Skill + EQ</strong>
-                    </p>
-                </div>
             </div>
         </div>
     </section>
@@ -805,4 +1056,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
